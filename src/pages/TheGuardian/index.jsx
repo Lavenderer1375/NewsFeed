@@ -33,31 +33,32 @@ const TheGuardian = ({ searchProps, filterProps, paginationProps }) => {
 
   // UI
   return (
-    <div>
-      {/* mapping news for setting the data */}
-      {news.map((item, index) => (
-        <div key={index}>
-          <h1>{item.webTitle}</h1>
-          <h2>{item.sectionName}</h2>
-          <p>{item.pillarName}</p>
-          <p>{item.type}</p>
-          <a href={item.webUrl} target="_blank" rel="noopener noreferrer">
-            Read More
-          </a>
-          <p>Date of publication:{item.webPublicationDate}</p>
-          <p>{item.content}</p>
-        </div>
-      ))}
+    <div className="container mx-auto px-4">
+      <div className="grid gap-4">
+        {/* Mapping news for setting the data */}
+        {news.map((item, index) => (
+          <div key={index} className="p-4 rounded-lg shadow-md">
+            <h1 className="text-xl font-bold mb-2">{item.webTitle}</h1>
+            <h2 className="text-lg mb-2">Section: {item.sectionName}</h2>
+            <p className="text-base mb-2">Pillar Name: {item.pillarName}</p>
+            <p className="text-base mb-2">Type of content: {item.type}</p>
+            <a
+              href={item.webUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline"
+            >
+              Read More
+            </a>
+            <p className="text-sm mt-2">
+              Web publication date: {item.webPublicationDate}
+            </p>
+            <p className="text-base mt-2">{item.content}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
-
-// TheGuardian.propTypes = {
-//   query: PropTypes.string.isRequired,
-//   fromDate: PropTypes.function.isRequired,
-//   page: PropTypes.number.isRequired,
-//   tags: PropTypes.function.isRequired,
-//   pageNumber: PropTypes.number.isRequired,
-// };
 
 export default TheGuardian;

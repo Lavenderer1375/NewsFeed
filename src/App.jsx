@@ -4,11 +4,11 @@ import MyNavbar from "./components/navbar";
 import NewsFeed from "./pages/NewsFeed";
 import TheGuardian from "./pages/TheGuardian";
 import { QueryClient, QueryClientProvider } from "react-query";
-import "./index.scss";
+import "./index.css";
 
 const App = () => {
   // States passed through each component to handle URL change:
-  const [query, setQuery] = useState("debate");
+  const [query, setQuery] = useState("apple");
   const [fromDate, setFromDate] = useState("");
   const [sources, setSources] = useState("google-news");
   const [pageSize, setPageSize] = useState(10);

@@ -1,0 +1,3 @@
+.main {
+  @apply bg-blue-500 p-4 flex flex-wrap items-center justify-between;
+}
